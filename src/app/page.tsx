@@ -100,7 +100,7 @@ export default function Home() {
                   {copied ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
                 </button>
                 <a
-                  href={\`data:text/json;charset=utf-8,\${encodeURIComponent(JSON.stringify(result, null, 2))}\`}
+                  href={`data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(result, null, 2))}`}
                   download="mock_data.json"
                   className="p-2 hover:bg-slate-700 rounded-md transition-colors text-slate-300 hover:text-white"
                   title="Download JSON"
