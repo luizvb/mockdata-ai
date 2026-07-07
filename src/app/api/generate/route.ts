@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     const result = await generateObject({
       model: openrouter('google/gemini-2.5-flash'), // Updated model string, standardizing to gemini
       schema: z.object({
-        data: z.array(z.record(z.any())).length(rowCount),
+        data: z.array(z.record(z.string(), z.any())).length(rowCount),
       }),
       prompt: `Generate ${rowCount} rows of realistic mock data in JSON format based on the following schema constraints:\n\n${schemaDefinition}`,
     });
